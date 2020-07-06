@@ -63,7 +63,6 @@ export function onSearch(
             inputKey,
           },
         );
-        debugger;
       })
       .catch((e) => {
         console.log(e);
@@ -132,6 +131,7 @@ export function onLoadMoreSearch(
 }
 
 function genFetchUrl(key) {
+  console.log(API_URL + key + QUERY_STR);
   return API_URL + key + QUERY_STR;
 }
 

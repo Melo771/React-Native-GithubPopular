@@ -94,17 +94,13 @@ class FavoriteTab extends Component<Props> {
 
   componentDidMount() {
     this.loadData(true);
-    this.unsubscribe = this.props.navigation
-      .dangerouslyGetParent()
-      .addListener('tabPress', (e) => {
-        this.loadData(false);
-      });
+    this.unsubscribe = this.props.navigation.addListener('tabPress', (e) => {
+      this.loadData(false);
+    });
   }
 
   componentWillUnmount() {
-    this.props.navigation
-      .dangerouslyGetParent()
-      .removeListener(this.unsubscribe);
+    this.props.navigation.removeListener(this.unsubscribe);
   }
 
   loadData(isShowLoading) {

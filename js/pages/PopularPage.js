@@ -154,13 +154,11 @@ class PopularTab extends Component {
       }),
     );
 
-    this.unsubscribe = this.props.navigation
-      .dangerouslyGetParent()
-      .addListener('tabPress', () => {
-        if (this.isFavoriteChanged) {
-          this.loadData(null, true);
-        }
-      });
+    this.unsubscribe = this.props.navigation.addListener('tabPress', () => {
+      if (this.isFavoriteChanged) {
+        this.loadData(null, true);
+      }
+    });
   }
 
   componentWillUnmount() {
