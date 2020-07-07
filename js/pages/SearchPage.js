@@ -198,12 +198,7 @@ class SearchPage extends Component<Props> {
   }
 
   render() {
-    const {
-      isLoading,
-      projectModels,
-      showBottomButton,
-      hideLoadingMore,
-    } = this.props.search;
+    const {isLoading, projectModels, showBottomButton} = this.props.search;
     const {theme} = this.params;
     let statusBar = null;
     if (Platform.OS === 'ios' && !DeviceInfo.isIPhoneX_deprecated) {

@@ -67,8 +67,8 @@ class PopularPage extends Component {
             return (
               item.checked && (
                 <Tab.Screen
-                  key={index}
-                  name={`tab${index}`}
+                  key={item.name}
+                  name={`tab${item.name}`}
                   options={{title: item.name}}>
                   {() => (
                     <PopularTabPage
