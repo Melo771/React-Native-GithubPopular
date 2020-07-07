@@ -24,7 +24,7 @@ import BackPressComponent from '../common/BackPressComponent';
 import GlobalStyles from '../res/styles/GlobalStyles';
 import ViewUtil from '../util/ViewUtil';
 import Utils from '../util/Util';
-// import SafeAreaViewPlus from '../common/SafeAreaViewPlus';
+import SafeAreaViewPlus from '../common/SafeAreaViewPlus';
 const favoriteDao = new FavoriteDao(FLAG_STORAGE.flag_popular);
 type Props = {};
 const pageSize = 10; //设为常量，防止修改
@@ -267,13 +267,15 @@ class SearchPage extends Component<Props> {
       </View>
     );
     return (
-      <View style={GlobalStyles.root_container} topColor={theme.themeColor}>
+      <SafeAreaViewPlus
+        style={GlobalStyles.root_container}
+        topColor={theme.themeColor}>
         {statusBar}
         {this.renderNavBar()}
         {resultView}
         {bottomButton}
         <Toast ref={(toast) => (this.toast = toast)} />
-      </View>
+      </SafeAreaViewPlus>
     );
   }
 }

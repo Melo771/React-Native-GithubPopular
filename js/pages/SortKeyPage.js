@@ -11,6 +11,7 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 import ArrayUtil from '../util/ArrayUtil';
 import SortableListView from 'react-native-sortable-listview';
 import GlobalStyles from '../res/styles/GlobalStyles';
+import SafeAreaViewPlus from '../common/SafeAreaViewPlus';
 
 type Props = {};
 
@@ -169,7 +170,9 @@ class SortKeyPage extends Component<Props> {
       />
     );
     return (
-      <View style={GlobalStyles.root_container} topColor={theme.themeColor}>
+      <SafeAreaViewPlus
+        style={GlobalStyles.root_container}
+        topColor={theme.themeColor}>
         {navigationBar}
         <SortableListView
           data={this.state.checkedArray}
@@ -184,7 +187,7 @@ class SortKeyPage extends Component<Props> {
           }}
           renderRow={(row) => <SortCell data={row} {...this.params} />}
         />
-      </View>
+      </SafeAreaViewPlus>
     );
   }
 }

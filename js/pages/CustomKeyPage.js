@@ -10,8 +10,8 @@ import ViewUtil from '../util/ViewUtil';
 import CheckBox from 'react-native-check-box';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import ArrayUtil from '../util/ArrayUtil';
-
-// import SafeAreaViewPlus from '../common/SafeAreaViewPlus';
+import SafeAreaViewPlus from '../common/SafeAreaViewPlus';
+import GlobalStyles from '../res/styles/GlobalStyles';
 type Props = {};
 
 class CustomKeyPage extends Component<Props> {
@@ -205,10 +205,12 @@ class CustomKeyPage extends Component<Props> {
       />
     );
     return (
-      <View style={styles.container} topColor={theme.themeColor}>
+      <SafeAreaViewPlus
+        style={GlobalStyles.root_container}
+        topColor={theme.themeColor}>
         {navigationBar}
         <ScrollView>{this.renderView()}</ScrollView>
-      </View>
+      </SafeAreaViewPlus>
     );
   }
 }

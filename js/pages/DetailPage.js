@@ -13,6 +13,7 @@ import {FLAG_STORAGE} from '../expand/dao/DataStore';
 import EventTypes from '../util/EventTypes';
 import EventBus from 'react-native-event-bus';
 import {connect} from 'react-redux';
+import SafeAreaViewPlus from '../common/SafeAreaViewPlus';
 
 class DetailPage extends Component<Props> {
   constructor(props) {
@@ -118,7 +119,7 @@ class DetailPage extends Component<Props> {
     );
 
     return (
-      <View style={styles.container}>
+      <SafeAreaViewPlus topColor={theme.themeColor}>
         {navigationBar}
         <WebView
           ref={(webView) => (this.webView = webView)}
@@ -126,7 +127,7 @@ class DetailPage extends Component<Props> {
           onNavigationStateChange={(e) => this.onNavigationStateChange(e)}
           source={{uri: this.state.url}}
         />
-      </View>
+      </SafeAreaViewPlus>
     );
   }
 }
